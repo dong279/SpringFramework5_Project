@@ -1,5 +1,8 @@
  package myspring.di.xml;
 
+import javax.annotation.Resource;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +17,20 @@ public class HelloBeanSpringTest {
 	@Qualifier("helloC")
 	Hello hello;
 	
+	@Resource(name = "hello")
+	Hello helloSetter;
+	
 	@Test
 	void helloBeanCons(){
+		//생성자
 		System.out.println(hello.sayHello());
+		//스프링
+		System.out.println(helloSetter.sayHello());
+		
+		
+		assertEquals("Hello 생성자", hello.sayHello());
+		assertEquals("Hello 스프링", helloSetter.sayHello());
+		
+		hello.print();
 	}
 }

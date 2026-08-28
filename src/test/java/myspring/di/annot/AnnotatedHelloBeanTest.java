@@ -26,6 +26,7 @@ public class AnnotatedHelloBeanTest {
 	@Test
 	void hellowBeansCons() {
 		assertEquals("Hello 어노테이션생성자", helloCons.sayHello());
+		hello.print();
 	}
 	
 	// 전략2 어노테이션 방식에서의 Setter Injection을 테스트

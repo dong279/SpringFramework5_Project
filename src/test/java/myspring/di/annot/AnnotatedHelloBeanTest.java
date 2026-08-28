@@ -1,6 +1,8 @@
 package myspring.di.annot;
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.annotation.Resource;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,13 @@ public class AnnotatedHelloBeanTest {
 	//타입만 같아도되서 이렇게 작성
 	HelloBean hello;
 	
+	@Resource(name = "StringPrinter")
+	PrinterBean printer;
+	
 	@Test
 	void helloBeanAnnot() {
 		assertEquals("Hello 어노테이션", hello.sayHello());
+		hello.print();
+		assertEquals("Hello 어노테이션", printer.toString());
 	}
 }

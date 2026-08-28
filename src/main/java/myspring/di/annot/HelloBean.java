@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+// ("HelloBean") 생략
 @Component
 public class HelloBean {
 	@Value("어노테이션")

@@ -30,15 +30,16 @@ public class HelloConfig {
 	
 //	<bean id="hello" class="myspring.di.xml.Hello" scope="singleton">
 //	<!-- setName("스프링") 메서드 호출 -->
-//	<property name="name" value="스프링" />
+//	<property name="name" value="자바컨피그" />
 //	<!-- setPrinter(new StringPrinter()) 메서드 호출 -->
 //	<property name="printer" ref="strPrinter" />
 //	</bean>
 	@Bean
 	public Hello hello() {
 		Hello hello = new Hello();
-		String propName = env.getProperty("myName");
+		String propName = env.getProperty("myName3");
 		hello.setName(propName);
+		hello.setPrinter(stringPirnter());
 		return hello;
 	}
 	

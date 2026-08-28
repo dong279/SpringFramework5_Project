@@ -38,6 +38,7 @@ public class HelloConfig {
 	@Bean @Scope(value = "singleton")
 	public Hello hello() {
 		Hello hello = new Hello();
+		//자바컨피그
 		String propName = env.getProperty("myName3");
 		hello.setName(propName);
 		hello.setPrinter(stringPirnter());

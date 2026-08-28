@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 // ("HelloBean") 생략
 @Component
 public class HelloBean {
-	@Value("어노테이션")
+	@Value("${myName}")
 	String name;
 	
 	@Autowired
